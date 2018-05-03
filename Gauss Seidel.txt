@@ -1,0 +1,21 @@
+clc;
+%initial gauss
+%these are the initial inputs for our variable values.
+T2 = 100;
+T3 = 100;
+T4 = 100;
+
+%final answers are at bottom of code.
+for i =1:200
+    %foward Gauss Seidel
+    T2 = (160-3*T3)/-2.0;
+    T3 = (-40+T2- 3*T4)/(-2.0);
+    T4 = (-160+T3)/-2.0;
+    %backward
+    T4 = (-160+T3)/-2.0;
+    T3 = (-40+T2 -3*T4)/-2.0;
+    T2 = (160-3*T3)/-2.0;
+end 
+disp(T2);
+disp(T3);
+disp(T4);
